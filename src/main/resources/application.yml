@@ -1,7 +1,10 @@
 spring:
   application:
     name: hot.api
+  profiles:
+    default: "local"
 
 services:
   hotwheels-fandom:
     url: https://hotwheels.fandom.com/wiki/
+    endpoint-lista-do-ano: List_of_{ANO}_Hot_Wheels
