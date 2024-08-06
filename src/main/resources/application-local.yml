@@ -9,6 +9,11 @@ spring:
     console:
       enabled: true
 
+  batch:
+    jdbc:
+      initialize-schema: always
+      platform: h2
+
   jpa:
     database: h2
     generate-ddl: true
