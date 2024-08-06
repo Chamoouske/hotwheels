@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: hot.api
+
+services:
+  hotwheels-fandom:
+    url: https://hotwheels.fandom.com/wiki/
