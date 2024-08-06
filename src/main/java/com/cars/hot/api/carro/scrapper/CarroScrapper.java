@@ -38,11 +38,14 @@ public class CarroScrapper {
         return this.getPaginaHtml(this.getUrlFandomListaDoAno(ano));
     }
 
-    public List<Carro> getListaCarrosPorAno(String ano) throws IOException {
+    public Elements getElementsDeListaDeCarrosPorAno(Object ano) throws IOException {
+        return this.getPaginaListaCarrosDoAno(ano).select("#" + selectorListaDoAno);
+    }
+
+    public List<Carro> getListaCarrosDeElements(Elements elements) {
         List<Carro> carros = new ArrayList<>();
 
-        Elements list = this.getPaginaListaCarrosDoAno(ano).select( "#" + selectorListaDoAno);
-        list.forEach(obj -> {
+        elements.forEach(obj -> {
             CarroFactory factory = AbstractFactory.getFabrica(CarroFactory.NOME);
             carros.add(factory.novoObjeto(obj));
         });
