@@ -22,6 +22,13 @@
         <sonar.organization>chamoouske</sonar.organization>
         <sonar.projectKey>chamoouske_hotwheels</sonar.projectKey>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+        <sonar.java.source>${java.version}</sonar.java.source>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${project.build.directory}/site/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.report>${project.build.directory}/reports/jacoco.exec</sonar.report>
+        <sonar.java.libraries>${project.build.directory}/classes/**</sonar.java.libraries>
     </properties>
 
     <dependencies>
