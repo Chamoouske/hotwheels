@@ -39,14 +39,13 @@ public class CarroScrapper {
     }
 
     public Elements getElementsDeListaDeCarrosPorAno(Object ano) throws IOException {
-        return this.getPaginaListaCarrosDoAno(ano).select( "#" + selectorListaDoAno);
+        return this.getPaginaListaCarrosDoAno(ano).select("#" + selectorListaDoAno);
     }
 
-    public List<Carro> getListaCarrosPorAno(String ano) throws IOException {
+    public List<Carro> getListaCarrosDeElements(Elements elements) {
         List<Carro> carros = new ArrayList<>();
 
-        Elements list = getElementsDeListaDeCarrosPorAno(ano);
-        list.forEach(obj -> {
+        elements.forEach(obj -> {
             CarroFactory factory = AbstractFactory.getFabrica(CarroFactory.NOME);
             carros.add(factory.novoObjeto(obj));
         });
