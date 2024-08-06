@@ -29,6 +29,7 @@ public class CarroListaAnualReader implements ItemReader<Elements> {
     @BeforeStep
     @SuppressWarnings("unchecked")
     public void beforeStep(StepExecution stepExecution) {
+        count.set(0);
         JobParameter<?> parameter = stepExecution.getJobExecution().getJobParameters().getParameter(JobParameterNomesEnum.LISTA_CARROS_POR_ANO.getDescricao());
         if (Objects.nonNull(parameter))
             listAno = (List<String>) parameter.getValue();
