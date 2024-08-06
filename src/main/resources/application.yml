@@ -8,3 +8,4 @@ services:
   hotwheels-fandom:
     url: https://hotwheels.fandom.com/wiki/
     endpoint-lista-do-ano: List_of_{ANO}_Hot_Wheels
+    selector-tabela-lista-carros-do-ano: mw-content-text > div > table:nth-child(3) > tbody > tr:not(:first-child)
